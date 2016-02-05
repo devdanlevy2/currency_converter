@@ -18,10 +18,22 @@ class Currency
     @code == other.code
   end
 
+  def +(other)
+    @code + other.code
+  end
+
+  def -(other)
+    @code - other.code
+  end
+
+  #def like_code(other)
+  # if @code != other.code
+  #   raise "DifferentCurrencyCodeError"
+  # end
+
 end
 
-dans_money = Currency.new(1000, "USD")
-bobs_money = Currency.new(1000, "YEN")
+dans_money = Currency.new(1000, "YEN")
+bobs_money = Currency.new(1000, "USD")
 
-puts dans_money.code == bobs_money.code
-puts dans_money.amount == bobs_money.amount
+puts dans_money.amount - bobs_money.amount
