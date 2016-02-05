@@ -25,7 +25,7 @@ class Currency
     if @code == other.code
       @amount + other.amount
     else
-      unlike_currency_error
+    raise UnlikeCurrencyError
     end
   end
 
@@ -33,7 +33,7 @@ class Currency
     if @code == other.code
       @amount - other.amount
     else
-      unlike_currency_error
+      raise UnlikeCurrencyError
     end
   end
 
@@ -41,12 +41,7 @@ class Currency
     if @code == other.code
       @amount * other.amount
     else
-      unlike_currency_error
+      raise UnlikeCurrencyError
+    end
   end
-end
-
-  def unlike_currency_error
-     puts "DifferentCurrencyCodeError"
-  end
-
 end

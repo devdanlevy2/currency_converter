@@ -1,0 +1,2 @@
+class UnlikeCurrencyError < StandardError
+end
