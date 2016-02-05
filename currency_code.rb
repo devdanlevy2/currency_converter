@@ -1,8 +1,10 @@
-#require './currency'
+require './currency'
+require 'byebug'
 
+dans_money = Currency.new(7000000, "USD")
+bobs_money = Currency.new(1000, "USD")
 
-my_money = Currency.new(10000, USD)
-my_money.equal_method(USD: 10000)
-
-#this is the least important of the three
-puts my_money
+#byebug
+puts dans_money.code == bobs_money.code
+puts dans_money + bobs_money
+puts dans_money - bobs_money

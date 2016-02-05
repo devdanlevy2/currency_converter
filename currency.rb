@@ -1,4 +1,3 @@
-#require '.currency_converter'
 
 class Currency
   def initialize(amount, code)
@@ -15,25 +14,31 @@ class Currency
   end
 
   def ==(other)
-    @code == other.code
+    #@code == other.code && @amount == other.amount
+    if @code == other.code
+      true
+    end
   end
 
   def +(other)
-    @code + other.code if other.unlike_currency_error
+    if @code == other.code
+      @amount + other.amount
+    else
+      unlike_currency_error
+    end
+
   end
 
   def -(other)
-    @code - other.code
+    if @code == other.code
+      @amount - other.amount
+    else
+      unlike_currency_error
+    end
   end
 
-  def unlike_currency_error(other)
-     raise "DifferentCurrencyCodeError" if @code != other.code
+  def unlike_currency_error
+     puts "DifferentCurrencyCodeError"
   end
 
 end
-
-dans_money = Currency.new(1000, "YEN")
-bobs_money = Currency.new(1000, "USD")
-
-puts dans_money == bobs_money
-puts dans_money.amount + bobs_money.amount
