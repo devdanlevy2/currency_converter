@@ -1,6 +1,6 @@
 
 class Currency
-  def initialize(amount, code)
+  def initialize(code, amount)
     @amount = amount
     @code = code
   end
@@ -44,4 +44,14 @@ class Currency
       raise UnlikeCurrencyError
     end
   end
+
+current_rates = {USD: 1.0, EUR: 0.74, YEN: 1.2}
+current_rates = Converter.new
+
+
+#  def convert_codes{
+#  #  :USD => "$",
+#  #  :EUR => "€",
+#  #  :YEN => "¥",
+#  end
 end

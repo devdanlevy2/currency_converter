@@ -1,10 +1,10 @@
 
 class Converter
-  def initialize()
-    end
-
-
+  def initialize(rates = {})
+    @rates = rates
   end
+end
+
 
 #the last bullet including £ & $ are a bonus
 #the hash shouldt be in currency_converter
