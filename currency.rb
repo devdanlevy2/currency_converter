@@ -3,6 +3,11 @@ class Currency
   def initialize(code, amount)
     @amount = amount
     @code = code
+    @currency_sign = {"$" => :USD, "€" => :EUR, "¥" => :YEN}
+  end
+
+  def currency_sign
+    @currency_sign
   end
 
   def code
@@ -45,13 +50,15 @@ class Currency
     end
   end
 
-current_rates = {USD: 1.0, EUR: 0.74, YEN: 1.2}
-current_rates = Converter.new
+  def code_converter
+    if currency_sign.has_key?(@code)
+      currency_sign[@code]
+    else
+      puts "I don't know that currency"
+    end
+  end
 
 
-#  def convert_codes{
-#  #  :USD => "$",
-#  #  :EUR => "€",
-#  #  :YEN => "¥",
-#  end
+  rates = {:USD 1.0, :EUR 0.74, :YEN 1.2}
+  rates = Converter.new(rates)
 end
