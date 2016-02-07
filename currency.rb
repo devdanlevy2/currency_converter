@@ -59,6 +59,8 @@ class Currency
   end
 
 
-  rates = {:USD 1.0, :EUR 0.74, :YEN 1.2}
-  rates = Converter.new(rates)
+
+
+
+  #rates = Converter.new(rates)
 end
