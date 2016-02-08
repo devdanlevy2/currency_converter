@@ -4,20 +4,12 @@ class Converter
     @rates = rates
   end
 end
-
+byebug
   def convert(other, new_code)
-    if (new_code >= 1.0
-
+    until Currency.new.include? (other, new_code || rates.include(types))
       raise UnknownCurrencyCodeError
-    elsif
-
-    else
+    elsif other.amount = Currency.new
+      Currency.new * (rates [new_code] / rates[other.new_code]), new_code
     end
   end
 end
-#Should be able to take a Currency object that has one
-#currency code it knows and a requested currency code
-#and return a new Currency object with the right
-#amount in the new currency code
-
-#end

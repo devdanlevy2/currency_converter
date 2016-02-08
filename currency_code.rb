@@ -7,7 +7,7 @@ require './UnknownCurrencyCodeError'
 rates = {:USD => 1.00, :EUR => 0.74, :YEN => 1.20}
 bank = Converter.new(rates)
 
-dans_money = Currency.new("$", 1000.00)
+dans_money = Currency.new("&", 1000.00)
 bobs_money = Currency.new("¥", 740.00)
 dans_new_money = bank.convert(money, :EUR)
-puts new_money.amount
+puts dans_new_money.amount
